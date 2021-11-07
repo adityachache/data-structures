@@ -38,6 +38,7 @@ class HashTable():
         #print(current_bucket)
         
     def get_keys(self):
+        """prints all the keys in the hashtable"""
         keys_array = []
         for i in range(0,len(self.data)):
             if self.data[i] != None:
@@ -50,6 +51,7 @@ class HashTable():
     
     # same as the above function except we want the value so we use the first index
     def get_values(self):
+        """prints all the values of the keys in the hash table"""
         value_array = []
         for i in range(0,len(self.data)):
             if self.data[i]:
