@@ -80,6 +80,25 @@ class LinkedList():
             #currentnode.next = currentnode.next.next
             self.length -= 1
         self.printlist()
+        
+        
+    # IMPLEMENTING A METHOD TO REVERSE A LINKED LIST
+    def reverse(self):
+        """reverses the given linked list"""
+        if self.length <= 1:
+            return self.printlist()
+        else:
+            first = self.head           # set the first node as the head
+            second = first.next         # set the second node 
+            self.tail = self.head       # set the tail to be the head
+            while second:               # continue the loop till second node is not None
+                temp = second.next      # set a temp 
+                second.next = first     # change pointer of second node to first
+                first = second          # set first node to second and second node as temp
+                second = temp
+            self.head.next = None       
+            self.head = first
+            return self.printlist()
 
 
 myll = LinkedList()
